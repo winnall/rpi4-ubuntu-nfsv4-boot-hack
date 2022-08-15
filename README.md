@@ -1,5 +1,5 @@
 # rpi4-ubuntu-nfsv4-boot-hack
-A hacked `nfsmount` to enable network booting of Ubuntu via NFSv4 on an RPi4
+A hacked `nfsmount` to enable network booting of Ubuntu via NFSv4 on an RPi4.
 
 The `nfsmount` delivered with the Ubuntu 22.04 image for Raspberry Pi only works with NFSv3. This is because of an upstream (Debian) bug which has been known about since 2007, would you believe? By modifying the file `nfsmount.c` to match your requirements you can created your own `nfsmount`, which will network boot the RPi4 using NFSv4. Clearly, this is a hack.
 
