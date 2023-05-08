@@ -1,0 +1,30 @@
+#! /bin/sh
+
+OPTIONS=""
+PARAMS=""
+
+while getopts ":o:" opt; do
+  case $opt in
+    o)
+      OPTIONS="$OPTIONS -$opt $OPTARG"
+      ;;
+    \?)
+      echo "nfsmount: invalid option: -$OPTARG" >&2
+      ;;
+    :)
+      echo "nfsmount: option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+shift $((OPTIND-1))
+
+for param in "$@"
+do
+  PARAMS="$PARAMS $param"
+done
+
+echo "nfsmount -t nfs $OPTIONS $PARAMS"
+
+mount -t nfs $OPTIONS $PARAMS
