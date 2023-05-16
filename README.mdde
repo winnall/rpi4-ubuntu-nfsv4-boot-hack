@@ -3,7 +3,7 @@ A hacked `nfsmount` to enable network booting of Ubuntu via NFSv4 on an RPi4.
 
 The `nfsmount` delivered with the Ubuntu 22.04 image for Raspberry Pi only works with NFSv3. This is because of an upstream (Debian) bug which has been known about since 2007, would you believe? The file `nfsmount` is a shell script that replaces `/usr/lib/klibc/bin/nfsmount` and works with NFSv4, though possibly not with NFSv3...
 
-Don't use `nfsmount.c` any more: it is only still listed because I don't know how to delete it.
+I have deleted the original `nfsmount.c`: using a shell script for this hack makes far more sense.
 
 The big advantage of `nfsmount` is that it uses the parameters passed into `cmdline.txt`, which `initramfs` passes to it in the normal way. In fact, it will only use NFSv4 if you tell it to in `cmdline.txt`. I am unlikely to test this script with anything other than NFSv4. If anyone would like to let me know what happens with NFSv3 I will happily document it here.
 
