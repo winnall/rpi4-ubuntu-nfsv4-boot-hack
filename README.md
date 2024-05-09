@@ -11,7 +11,7 @@ Proceed as follows on Ubuntu 22.04:
 
 1) copy `nfsmount` to `/usr/lib/klibc/bin/nfsmount` (you might like to save the existing Ubuntu-delivered `nfsmount` first);
 2) `sudo update-initramfs -u` (this will generate errors - I ignore them);
-3) `sudo lsinitramfs -l /boot initrd.img | less` (to ensure that your `nfsmount` has been installed);
+3) `sudo lsinitramfs -l /boot/initrd.img | less` (to ensure that your `nfsmount` has been installed);
 4) reboot.
 
 This is not a thing of beauty, but it does a specific job.
